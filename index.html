@@ -3,59 +3,106 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lincei Labs</title>
+    <title>Lincei Labs — A verified workspace for clinical research</title>
     <meta
       name="description"
-      content="Lincei Labs is building a verified AI workspace for clinical research."
+      content="Lincei Labs is building a verified AI workspace for reproducible clinical research — where every definition, query, and result is recorded for review."
     >
     <meta property="og:title" content="Lincei Labs">
     <meta
       property="og:description"
       content="A verified AI workspace for reproducible clinical research."
     >
-    <meta property="og:image" content="assets/lincei-hero.png">
+    <meta property="og:image" content="assets/fresco-bg.jpg">
+    <link rel="preload" as="image" href="assets/fresco-bg.jpg" media="(min-width: 901px)">
+    <link rel="preload" as="image" href="assets/fresco-bg-mobile.jpg" media="(max-width: 900px)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap"
+    >
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <main>
+      <!-- HERO ─────────────────────────────────────────────── -->
       <section class="hero" aria-labelledby="page-title">
-        <img
-          class="hero__image"
-          src="assets/lincei-hero.png"
-          alt="Clinical research workspace with analysis screens and provenance traces"
-        >
-        <div class="hero__shade" aria-hidden="true"></div>
         <div class="hero__content">
-          <p class="eyebrow">Verified AI for clinical research</p>
-          <h1 id="page-title">Lincei Labs</h1>
+          <p class="mark">Lincei Labs – under construction...</p>
+
+          <h1 id="page-title" class="display">
+            <span class="display__line">A <strong>verified</strong></span>
+            <span class="display__line display__line--italic">AI workspace</span>
+            <span class="display__line">for clinical research.</span>
+          </h1>
+
           <p class="lede">
-            Building the workspace where research teams turn study ideas into
-            reproducible analyses, with every definition, query, assumption,
-            and result recorded for review.
+            A studio for the slow craft of reproducible science — the workspace
+            where teams turn study ideas into analyses, with every definition,
+            query, assumption and result recorded for review.
           </p>
-          <div class="actions" aria-label="Project links">
+
+          <div class="actions">
             <a class="button button--primary" href="https://github.com/hannesill/m4">
-              M4 on GitHub
-              <span aria-hidden="true">-&gt;</span>
+              <span>M4</span>
+              <span class="button__arrow" aria-hidden="true">→</span>
             </a>
             <a class="button" href="https://github.com/hannesill/vitrine">
-              Vitrine on GitHub
-              <span aria-hidden="true">-&gt;</span>
+              <span>Vitrine</span>
+              <span class="button__arrow" aria-hidden="true">→</span>
             </a>
           </div>
         </div>
       </section>
 
-      <section class="signal" aria-label="What Lincei Labs is building">
-        <div class="signal__inner">
-          <p>
-            M4 provides controlled clinical data access, reusable versioned
-            definitions, provenance, and agent-ready workflows. Vitrine is the
-            UI foundation for the collaborative research workspace coming next.
-          </p>
-          <p class="signal__status">Open-source foundation live. Hosted team workspace in progress.</p>
+      <!-- NOTE ─────────────────────────────────────────────── -->
+      <section class="note" aria-label="What we're building">
+        <p class="note__index">&mdash;&thinsp;I</p>
+        <p class="note__body">
+          We treat a study like a manuscript: composed with care, annotated at
+          the margins, verifiable centuries from now. Definitions are versioned.
+          Results carry their lineage. <em>AI agents act only through
+          instruments we can audit.</em>
+        </p>
+      </section>
+
+      <!-- WORKS ────────────────────────────────────────────── -->
+      <section class="works" aria-label="Works">
+        <p class="note__index">&mdash;&thinsp;II</p>
+
+        <div class="works__grid">
+          <article class="work">
+            <h2 class="work__title">M4</h2>
+            <p class="work__kind">Foundation · Open source</p>
+            <p class="work__body">
+              Controlled clinical data access, reusable versioned definitions,
+              end-to-end provenance, and agent-ready workflows.
+            </p>
+            <a class="work__link" href="https://github.com/hannesill/m4">
+              View on GitHub <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="work">
+            <h2 class="work__title">Vitrine</h2>
+            <p class="work__kind">Interface · In the workshop</p>
+            <p class="work__body">
+              The UI foundation for the collaborative research workspace —
+              a reading room where teams compose, review, and verify analyses
+              side by side.
+            </p>
+            <a class="work__link" href="https://github.com/hannesill/vitrine">
+              View on GitHub <span aria-hidden="true">→</span>
+            </a>
+          </article>
         </div>
       </section>
     </main>
+
+    <footer class="foot">
+      <p>Lincei Labs</p>
+      <p>© MMXXVI</p>
+    </footer>
   </body>
 </html>
