@@ -20,17 +20,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap"
     >
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <header class="site-head" aria-label="Site">
+      <a class="brand" href="/" aria-label="Lincei Labs home">
+        <span class="brand__sigil" aria-hidden="true">L</span>
+        <span>Lincei Labs</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#approach">Approach</a>
+        <a href="#works">Works</a>
+      </nav>
+    </header>
+
     <main>
       <!-- HERO ─────────────────────────────────────────────── -->
       <section class="hero" aria-labelledby="page-title">
+        <div class="hero__frame" aria-hidden="true">
+          <span>I</span>
+        </div>
         <div class="hero__content">
-          <p class="mark">Lincei Labs – under construction...</p>
-
           <h1 id="page-title" class="display">
             <span class="display__line">A <strong>verified</strong></span>
             <span class="display__line display__line--italic">AI workspace</span>
@@ -40,7 +52,8 @@
           <p class="lede">
             A studio for the slow craft of reproducible science — the workspace
             where teams turn study ideas into analyses, with every definition,
-            query, assumption and result recorded for review.
+            query, assumption and result ready for audit, human review, and
+            collaboration.
           </p>
 
           <div class="actions">
@@ -54,30 +67,49 @@
             </a>
           </div>
         </div>
+
+        <aside class="hero__card" aria-label="Workspace principles">
+          <p class="hero__card-kicker">In development</p>
+          <ul class="principles">
+            <li>
+              <span>01</span>
+              <strong>Definitions versioned</strong>
+            </li>
+            <li>
+              <span>02</span>
+              <strong>Review made easy</strong>
+            </li>
+            <li>
+              <span>03</span>
+              <strong>Collaboration built in</strong>
+            </li>
+          </ul>
+        </aside>
       </section>
 
       <!-- NOTE ─────────────────────────────────────────────── -->
-      <section class="note" aria-label="What we're building">
+      <section id="approach" class="note" aria-label="What we're building">
         <p class="note__index">&mdash;&thinsp;I</p>
         <p class="note__body">
           We treat a study like a manuscript: composed with care, annotated at
           the margins, verifiable centuries from now. Definitions are versioned.
-          Results carry their lineage. <em>AI agents act only through
-          instruments we can audit.</em>
+          Results carry their lineage. <em>AI agents act through instruments
+          people can inspect, discuss, and approve.</em>
         </p>
       </section>
 
       <!-- WORKS ────────────────────────────────────────────── -->
-      <section class="works" aria-label="Works">
+      <section id="works" class="works" aria-label="Works">
         <p class="note__index">&mdash;&thinsp;II</p>
 
         <div class="works__grid">
           <article class="work">
+            <p class="work__number">I</p>
             <h2 class="work__title">M4</h2>
             <p class="work__kind">Foundation · Open source</p>
             <p class="work__body">
               Controlled clinical data access, reusable versioned definitions,
-              end-to-end provenance, and agent-ready workflows.
+              end-to-end provenance, and workflows designed for review.
             </p>
             <a class="work__link" href="https://github.com/hannesill/m4">
               View on GitHub <span aria-hidden="true">→</span>
@@ -85,12 +117,13 @@
           </article>
 
           <article class="work">
+            <p class="work__number">II</p>
             <h2 class="work__title">Vitrine</h2>
             <p class="work__kind">Interface · In the workshop</p>
             <p class="work__body">
               The UI foundation for the collaborative research workspace —
-              a reading room where teams compose, review, and verify analyses
-              side by side.
+              a reading room where teams compose, review, discuss, and verify
+              analyses side by side.
             </p>
             <a class="work__link" href="https://github.com/hannesill/vitrine">
               View on GitHub <span aria-hidden="true">→</span>
