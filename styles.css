@@ -292,8 +292,9 @@ button {
 
 .brand-mark img {
   display: block;
-  width: 19px;
-  height: 19px;
+  width: 23px;
+  height: 23px;
+  transform: translateY(1px);
 }
 
 .primary-nav,
@@ -1513,48 +1514,20 @@ button {
 
 .observation-eye {
   position: relative;
-  width: 250px;
-  height: 125px;
-  transform: rotate(-4deg);
-  border: 2px solid #ffffff;
-  border-radius: 100% 0 100% 0;
+  z-index: 2;
+  width: clamp(250px, 26vw, 320px);
 }
 
-.observation-eye::before {
-  position: absolute;
-  inset: 13px 58px;
-  content: "";
-  border: 1px solid #5eead4;
-  border-radius: 50%;
-}
-
-.observation-eye span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 45px;
-  height: 45px;
-  transform: translate(-50%, -50%);
-  border: 1px solid #93c5fd;
-  border-radius: 50%;
-  background: rgba(37, 87, 214, 0.35);
-}
-
-.observation-eye span::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  content: "";
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: #ffffff;
+.observation-eye img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: brightness(0) invert(1);
 }
 
 .orbit {
   position: absolute;
-  border: 1px solid rgba(96, 165, 250, 0.42);
+  border: 2px solid rgba(96, 165, 250, 0.34);
   border-radius: 50%;
 }
 
@@ -2279,12 +2252,7 @@ button {
   }
 
   .observation-eye {
-    width: 205px;
-    height: 102px;
-  }
-
-  .observation-eye::before {
-    inset: 11px 48px;
+    width: 245px;
   }
 
   .orbit--one {
