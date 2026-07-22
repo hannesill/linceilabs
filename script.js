@@ -1,4 +1,6 @@
 (() => {
+  document.documentElement.classList.add("js");
+
   const header = document.querySelector("[data-header]");
   const nav = document.querySelector("[data-nav]");
   const navToggle = document.querySelector("[data-nav-toggle]");
@@ -31,19 +33,55 @@
   const revealElements = document.querySelectorAll("[data-reveal]");
   if (motionQuery.matches || !("IntersectionObserver" in window)) {
     revealElements.forEach((element) => element.classList.add("is-visible"));
-    return;
+  } else {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -8%", threshold: 0.12 },
+    );
+
+    revealElements.forEach((element) => observer.observe(element));
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    { rootMargin: "0px 0px -8%", threshold: 0.12 },
-  );
+  const tiltPanel = document.querySelector("[data-tilt-panel]");
+  const precisePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+  let tiltFrame = 0;
 
-  revealElements.forEach((element) => observer.observe(element));
+  const resetTilt = () => {
+    if (!tiltPanel) return;
+    window.cancelAnimationFrame(tiltFrame);
+    tiltPanel.classList.remove("is-tilting");
+    tiltPanel.style.setProperty("--tilt-x", "0deg");
+    tiltPanel.style.setProperty("--tilt-y", "0deg");
+    tiltPanel.style.setProperty("--pointer-x", "50%");
+    tiltPanel.style.setProperty("--pointer-y", "50%");
+  };
+
+  if (tiltPanel && precisePointer.matches && !motionQuery.matches) {
+    tiltPanel.addEventListener("pointermove", (event) => {
+      const bounds = tiltPanel.getBoundingClientRect();
+      const pointerX = (event.clientX - bounds.left) / bounds.width;
+      const pointerY = (event.clientY - bounds.top) / bounds.height;
+      const rotateX = (0.5 - pointerY) * 7;
+      const rotateY = (pointerX - 0.5) * 8;
+
+      window.cancelAnimationFrame(tiltFrame);
+      tiltFrame = window.requestAnimationFrame(() => {
+        tiltPanel.classList.add("is-tilting");
+        tiltPanel.style.setProperty("--tilt-x", `${rotateX.toFixed(2)}deg`);
+        tiltPanel.style.setProperty("--tilt-y", `${rotateY.toFixed(2)}deg`);
+        tiltPanel.style.setProperty("--pointer-x", `${(pointerX * 100).toFixed(1)}%`);
+        tiltPanel.style.setProperty("--pointer-y", `${(pointerY * 100).toFixed(1)}%`);
+      });
+    });
+
+    tiltPanel.addEventListener("pointerleave", resetTilt);
+    tiltPanel.addEventListener("pointercancel", resetTilt);
+    window.addEventListener("blur", resetTilt);
+  }
 })();

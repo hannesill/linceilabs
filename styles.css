@@ -511,6 +511,12 @@ button {
   gap: 9px;
   padding: 5px 13px;
   border-left: 1px solid var(--border);
+  border-radius: 8px;
+  transition: background-color 180ms ease;
+}
+
+.provider:hover {
+  background: var(--primary-light);
 }
 
 .provider-mark {
@@ -520,6 +526,11 @@ button {
   flex: 0 0 auto;
   place-items: center;
   border-radius: 8px;
+  transition: transform 180ms ease;
+}
+
+.provider:hover .provider-mark {
+  transform: translateY(-1px) scale(1.04);
 }
 
 .provider-mark img {
@@ -824,6 +835,11 @@ button {
   animation: card-enter 540ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+.js .research-trail:not(.is-visible) .research-card {
+  opacity: 0;
+  translate: 0 18px;
+}
+
 .research-trail.is-visible .research-card:nth-of-type(2) {
   animation-delay: 70ms;
 }
@@ -1081,10 +1097,23 @@ button {
   min-height: 255px;
   padding: 26px 25px 30px;
   border-right: 1px solid var(--border);
+  transition: background-color 180ms ease;
 }
 
 .workflow-steps li:last-child {
   border-right: 0;
+}
+
+.workflow-steps li:hover {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.workflow-steps h3 {
+  transition: color 180ms ease;
+}
+
+.workflow-steps li:hover h3 {
+  color: var(--primary);
 }
 
 .step-number {
@@ -1133,11 +1162,49 @@ button {
 }
 
 .dataset-panel {
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  position: relative;
   overflow: hidden;
   border: 1px solid var(--border-strong);
   border-radius: 8px;
   background: var(--surface);
-  box-shadow: var(--shadow);
+  box-shadow:
+    7px 9px 0 #d8e1ef,
+    0 28px 70px -38px rgba(15, 23, 42, 0.44);
+  transform: perspective(1100px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms ease;
+}
+
+.dataset-panel::after {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  content: "";
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    circle at var(--pointer-x) var(--pointer-y),
+    rgba(255, 255, 255, 0.52),
+    transparent 38%
+  );
+  mix-blend-mode: soft-light;
+  transition: opacity 180ms ease;
+}
+
+.dataset-panel.is-tilting {
+  box-shadow:
+    10px 13px 0 #d4deed,
+    0 36px 78px -36px rgba(15, 23, 42, 0.5);
+  transition-duration: 80ms;
+}
+
+.dataset-panel.is-tilting::after {
+  opacity: 1;
 }
 
 .panel-bar {
@@ -1164,6 +1231,12 @@ button {
   min-height: 72px;
   padding: 12px 0;
   border-bottom: 1px solid var(--border);
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.dataset-row:hover {
+  background: linear-gradient(90deg, transparent, var(--primary-light) 15%, var(--primary-light) 85%, transparent);
+  transform: translateX(3px);
 }
 
 .dataset-row:last-child {
@@ -1322,6 +1395,53 @@ button {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: #ffffff;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.gate-flow > div:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--primary) 44%, var(--border));
+  box-shadow: 0 18px 34px -28px rgba(37, 87, 214, 0.56);
+}
+
+.js .gate-flow:not(.is-visible) > div,
+.js .gate-flow:not(.is-visible) > i {
+  opacity: 0;
+}
+
+.js .gate-flow:not(.is-visible) > div {
+  translate: 0 18px;
+}
+
+.gate-flow.is-visible > div {
+  animation: gate-card-enter 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.gate-flow.is-visible > div:nth-of-type(2) {
+  animation-delay: 90ms;
+}
+
+.gate-flow.is-visible > div:nth-of-type(3) {
+  animation-delay: 180ms;
+}
+
+.gate-flow.is-visible > div:nth-of-type(4) {
+  animation-delay: 270ms;
+}
+
+.gate-flow.is-visible > i {
+  animation: gate-link-enter 420ms 190ms ease-out both;
+}
+
+.gate-flow.is-visible > i:nth-of-type(2) {
+  animation-delay: 280ms;
+}
+
+.gate-flow.is-visible > i:nth-of-type(3) {
+  animation-delay: 370ms;
 }
 
 .gate-flow span {
@@ -1489,29 +1609,6 @@ button {
   background-size: 44px 44px;
 }
 
-.name-visual::before,
-.name-visual::after {
-  position: absolute;
-  content: "";
-  border-radius: 50%;
-  background: #fb7185;
-}
-
-.name-visual::before {
-  top: 15%;
-  right: 23%;
-  width: 8px;
-  height: 8px;
-}
-
-.name-visual::after {
-  top: 23%;
-  right: 18%;
-  width: 4px;
-  height: 4px;
-  opacity: 0.58;
-}
-
 .observation-eye {
   position: relative;
   z-index: 2;
@@ -1526,21 +1623,56 @@ button {
 }
 
 .orbit {
+  --orbit-dot-scale: 1;
+  --orbit-duration: 12s;
+  --orbit-radius: 180px;
   position: absolute;
   border: 2px solid rgba(96, 165, 250, 0.34);
   border-radius: 50%;
 }
 
 .orbit--one {
+  --orbit-dot-scale: 1.82;
+  --orbit-duration: 11s;
+  --orbit-radius: 182px;
   width: 365px;
   height: 365px;
   transform: rotate(18deg) scaleY(0.55);
 }
 
 .orbit--two {
+  --orbit-dot-scale: 2.5;
+  --orbit-duration: 16s;
+  --orbit-radius: 219px;
   width: 440px;
   height: 440px;
   transform: rotate(-12deg) scaleY(0.4);
+}
+
+.orbit-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 50%;
+  background: #fb7185;
+  box-shadow: 0 0 0 3px rgba(251, 113, 133, 0.12);
+  animation: orbit-travel var(--orbit-duration) linear infinite;
+  animation-play-state: paused;
+}
+
+.name-visual.is-visible .orbit-dot {
+  animation-play-state: running;
+}
+
+.orbit--two .orbit-dot {
+  width: 6px;
+  height: 6px;
+  opacity: 0.74;
+  animation-direction: reverse;
+  animation-delay: -5s;
 }
 
 .name-visual p {
@@ -1768,11 +1900,11 @@ button {
 @keyframes section-enter {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    translate: 0 18px;
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    translate: 0 0;
   }
 }
 
@@ -1784,6 +1916,41 @@ button {
   to {
     opacity: 1;
     translate: 0 0;
+  }
+}
+
+@keyframes gate-card-enter {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes gate-link-enter {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@keyframes orbit-travel {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg)
+      scaleY(var(--orbit-dot-scale));
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg)
+      scaleY(var(--orbit-dot-scale));
   }
 }
 
@@ -2256,11 +2423,13 @@ button {
   }
 
   .orbit--one {
+    --orbit-radius: 147px;
     width: 295px;
     height: 295px;
   }
 
   .orbit--two {
+    --orbit-radius: 174px;
     width: 350px;
     height: 350px;
   }
@@ -2331,5 +2500,14 @@ button {
 
   .trail-line span {
     transform: scaleY(1);
+  }
+
+  .dataset-panel {
+    transform: none !important;
+  }
+
+  .orbit-dot {
+    animation: none !important;
+    transform: translate(-50%, -50%) translateX(var(--orbit-radius)) scaleY(var(--orbit-dot-scale));
   }
 }
