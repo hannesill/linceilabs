@@ -3,118 +3,532 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lincei Labs — Verifiable AI studies for clinical research</title>
+    <title>Lincei Lab — Agentic clinical research for EHR data</title>
     <meta
       name="description"
-      content="Lincei Labs is building a collaborative AI workspace where clinical research teams turn study ideas into reproducible, reviewable analyses."
+      content="Lincei Lab is an open-source workbench for clinical research with EHR data, built for visible methods, auditable artifacts, and human review."
     >
-    <meta property="og:title" content="Lincei Labs">
+    <meta name="theme-color" content="#f7f6f2">
+    <meta name="color-scheme" content="light">
+    <link rel="canonical" href="https://www.linceilabs.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Lincei Lab">
+    <meta property="og:url" content="https://www.linceilabs.com/">
+    <meta property="og:title" content="Lincei Lab — Agentic clinical research for EHR data">
     <meta
       property="og:description"
-      content="A collaborative AI workspace for verifiable clinical research."
+      content="Clinical research, with the work shown. An open-source workbench for EHR research with visible artifacts and human review."
     >
-    <meta property="og:image" content="assets/fresco-bg.jpg">
-    <link rel="preload" as="image" href="assets/fresco-bg.jpg" media="(min-width: 901px)">
-    <link rel="preload" as="image" href="assets/fresco-bg-mobile.jpg" media="(max-width: 900px)">
+    <meta property="og:image" content="https://www.linceilabs.com/og-lincei-lab.png">
+    <meta
+      property="og:image:alt"
+      content="Lincei Lab research cards connected by an auditable provenance trail."
+    >
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lincei Lab — Agentic clinical research for EHR data">
+    <meta
+      name="twitter:description"
+      content="Clinical research, with the work shown."
+    >
+    <meta name="twitter:image" content="https://www.linceilabs.com/og-lincei-lab.png">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;display=swap"
     >
+    <link rel="preload" as="image" href="screen-placeholder.jpg">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
   </head>
-  <body>
-    <header class="site-head" aria-label="Site">
-      <a class="brand" href="/" aria-label="Lincei Labs home">
-        <span class="brand__sigil" aria-hidden="true">L</span>
-        <span>Lincei Labs</span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="#approach">Approach</a>
-        <a href="#works">Works</a>
-      </nav>
+
+  <body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="nav-shell">
+        <a class="brand" href="#top" aria-label="Lincei Lab, back to top">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="favicon.svg" width="22" height="22" alt="">
+          </span>
+          <span>Lincei Lab</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Open navigation"
+          data-nav-toggle
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-navigation" aria-label="Primary" data-nav>
+          <div class="nav-links">
+            <a href="#product">Product</a>
+            <a href="#workflow">How it works</a>
+            <a href="#open-source">Open source</a>
+            <a href="#name">Why “Lincei”</a>
+          </div>
+          <div class="nav-actions">
+            <a
+              class="nav-github"
+              href="https://github.com/hannesill/lincei"
+              target="_blank"
+              rel="noopener noreferrer"
+            >GitHub <span aria-hidden="true">↗</span></a>
+            <a
+              class="button button--small button--dark"
+              href="https://github.com/hannesill/lincei/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Download</a>
+          </div>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <!-- HERO ─────────────────────────────────────────────── -->
-      <section class="hero" aria-labelledby="page-title">
-        <p class="hero__label">Under construction</p>
+    <main id="main">
+      <section class="hero" id="product" aria-labelledby="hero-title">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-marginal hero-marginal--left" aria-hidden="true">
+          <span>Plate 01</span>
+          <span>Observation</span>
+        </div>
+        <div class="hero-marginal hero-marginal--right" aria-hidden="true">
+          <span>Open source</span>
+          <span>EHR research</span>
+        </div>
 
-        <div class="hero__content">
-          <h1 id="page-title" class="display">
-            <span class="display__line">A <strong>collaborative</strong></span>
-            <span class="display__line display__line--italic">AI workspace</span>
-            <span class="display__line">for verifiable studies.</span>
-          </h1>
-
-          <p class="lede">
-            Lincei Labs helps clinical research teams turn study ideas into
-            reproducible analyses. Agents define cohorts, write SQL, run
-            statistics, and draft methods while every assumption, query,
-            definition, and result is recorded for human review.
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow">Agentic clinical research environment <span>(ACRE)</span></p>
+          <h1 id="hero-title">Clinical research,<br><em>with the work shown.</em></h1>
+          <p class="hero-lede">
+            Lincei Lab is an open-source workbench for clinical research with EHR data.
+            Direct research agents in plain language, inspect the path from cohort logic
+            to final figures, and keep human review in the loop.
           </p>
+          <div class="hero-actions" aria-label="Get Lincei">
+            <a
+              class="button button--primary"
+              href="https://github.com/hannesill/lincei/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Download Lincei</span>
+              <span class="button-arrow" aria-hidden="true">↓</span>
+            </a>
+            <a
+              class="button button--secondary"
+              href="https://github.com/hannesill/lincei"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Star on GitHub</span>
+              <span class="button-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <p class="platform-line">
+            <span class="status-dot" aria-hidden="true"></span>
+            Open source <span aria-hidden="true">·</span> Release targets: macOS, Windows, and Linux
+          </p>
+        </div>
 
-          <div class="actions">
-            <a class="button button--primary" href="https://github.com/hannesill/m4">
-              <span>M4</span>
-              <span class="button__arrow" aria-hidden="true">→</span>
-            </a>
-            <a class="button" href="https://github.com/hannesill/vitrine">
+        <div class="product-visual reveal" data-reveal>
+          <div class="screen-tags" aria-label="Product foundations">
+            <span><i class="tag-dot tag-dot--ochre" aria-hidden="true"></i>M4 data access</span>
+            <span><i class="tag-dot tag-dot--sage" aria-hidden="true"></i>Clinician-reviewed skills</span>
+            <span><i class="tag-dot tag-dot--burgundy" aria-hidden="true"></i>Vitrine audit trail</span>
+          </div>
+          <figure class="screen-frame">
+            <div class="screen-frame__bar">
+              <div class="screen-frame__identity">
+                <span class="screen-frame__glyph" aria-hidden="true"></span>
+                <span>Lincei / Study workspace</span>
+              </div>
+              <span class="screen-frame__state"><i aria-hidden="true"></i> Research environment</span>
+            </div>
+            <div class="screen-frame__image">
+              <img
+                src="screen-placeholder.jpg"
+                width="2230"
+                height="1571"
+                alt="Temporary product preview of the Lincei desktop research workspace"
+                fetchpriority="high"
+                decoding="async"
+              >
+            </div>
+            <figcaption>
+              <span>Temporary product capture</span>
+              <span>Interface preview · subject to change</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section evidence" id="auditability" aria-labelledby="evidence-title">
+        <div class="section-grid">
+          <header class="section-intro reveal" data-reveal>
+            <p class="eyebrow">01 / Auditability</p>
+            <h2 id="evidence-title">The work should be visible.</h2>
+            <p>
+              A plausible answer is not enough. Lincei turns the path of a study into an
+              inspectable record: definitions, runs, evidence, uncertainty, and human decisions.
+            </p>
+            <div class="definition-note">
               <span>Vitrine</span>
-              <span class="button__arrow" aria-hidden="true">→</span>
-            </a>
+              <p>The visible research surface for cards, artifacts, review gates, and provenance.</p>
+            </div>
+          </header>
+
+          <div class="research-trail reveal" data-reveal aria-label="Illustrative study trail">
+            <div class="trail-heading">
+              <span>Illustrative study trail</span>
+              <span>Example values, not study results</span>
+            </div>
+            <div class="trail-line" aria-hidden="true"><span></span></div>
+
+            <article class="research-card research-card--cohort">
+              <div class="card-index" aria-hidden="true">01</div>
+              <div class="card-main">
+                <div class="card-kicker"><span>Cohort table</span><span>Current</span></div>
+                <h3>Cohort definition</h3>
+                <p>2,841 eligible records</p>
+                <div class="card-meta"><span>mimic-iv</span><span>duckdb</span><span>cohort.sql</span></div>
+              </div>
+              <span class="card-state">Reviewed</span>
+            </article>
+
+            <article class="research-card research-card--measures">
+              <div class="card-index" aria-hidden="true">02</div>
+              <div class="card-main">
+                <div class="card-kicker"><span>Measures</span><span>Assertions</span></div>
+                <h3>Phenotype checks</h3>
+                <p>14 assertions reviewed</p>
+                <div class="mini-measures" aria-hidden="true">
+                  <span style="--measure: 92%"></span>
+                  <span style="--measure: 68%"></span>
+                  <span style="--measure: 81%"></span>
+                </div>
+              </div>
+              <span class="card-state">Accepted</span>
+            </article>
+
+            <article class="research-card research-card--analysis">
+              <div class="card-index" aria-hidden="true">03</div>
+              <div class="card-main">
+                <div class="card-kicker"><span>Analysis view</span><span>Captured run</span></div>
+                <h3>Analysis run</h3>
+                <p>Query, environment, and inputs captured</p>
+                <div class="card-meta"><span>run_0042</span><span>sha256:9b71…</span></div>
+              </div>
+              <span class="card-state">Reproducible</span>
+            </article>
+
+            <article class="research-card research-card--narrative">
+              <div class="card-index" aria-hidden="true">04</div>
+              <div class="card-main">
+                <div class="card-kicker"><span>Narrative</span><span>Evidence-linked</span></div>
+                <h3>Methods draft</h3>
+                <p>Claims linked to evidence</p>
+                <div class="text-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+              </div>
+              <span class="card-state">In review</span>
+            </article>
+
+            <article class="research-card research-card--decision">
+              <div class="card-index" aria-hidden="true">05</div>
+              <div class="card-main">
+                <div class="card-kicker"><span>Review gate</span><span>Human review</span></div>
+                <h3>Interpretation decision</h3>
+                <p>Decision and rationale recorded</p>
+                <div class="decision-row" aria-hidden="true">
+                  <span>Approve</span><span>Challenge</span><span>Revise</span>
+                </div>
+              </div>
+              <span class="card-state">Recorded</span>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- NOTE ─────────────────────────────────────────────── -->
-      <section id="approach" class="note" aria-label="What we're building">
-        <p class="note__body">
-          AI agents can make a plausible wrong study very quickly. Lincei
-          Labs is the verification layer for agent-assisted clinical research:
-          cohort definitions, phenotypes, statistical plans, methodology
-          checks, provenance traces, and human approvals become reusable
-          research assets. <em>The bottleneck is no longer generating an
-          answer; it is proving exactly how the answer was produced.</em>
+      <section class="section workflow" id="workflow" aria-labelledby="workflow-title">
+        <div class="section-heading reveal" data-reveal>
+          <p class="eyebrow">02 / How it works</p>
+          <h2 id="workflow-title">Direct the study.<br><em>Keep the path inspectable.</em></h2>
+        </div>
+
+        <ol class="workflow-steps reveal" data-reveal>
+          <li>
+            <span class="step-number">01</span>
+            <h3>Ask</h3>
+            <p>Describe the research question, dataset, population, endpoint, and constraints.</p>
+          </li>
+          <li>
+            <span class="step-number">02</span>
+            <h3>Run</h3>
+            <p>Agents use M4 and clinical-research skills to perform and capture the work.</p>
+          </li>
+          <li>
+            <span class="step-number">03</span>
+            <h3>Inspect</h3>
+            <p>Review queries, assumptions, artifacts, figures, dependencies, and provenance.</p>
+          </li>
+          <li>
+            <span class="step-number">04</span>
+            <h3>Decide</h3>
+            <p>Approve, challenge, fork, or revise before the study moves forward.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section foundation" id="data" aria-labelledby="foundation-title">
+        <div class="foundation-shell">
+          <div class="foundation-copy reveal" data-reveal>
+            <p class="eyebrow">03 / EHR-native foundation</p>
+            <h2 id="foundation-title">Complex data access,<br><em>made legible.</em></h2>
+            <p>
+              M4 gives agents structured, read-oriented access to clinical databases while
+              preserving the dataset, backend, query, and derived inputs around each result.
+              Rigorous definitions still matter; Lincei makes them easier to see and review.
+            </p>
+            <a
+              class="text-link"
+              href="https://github.com/hannesill/m4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Explore M4 on GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <div class="dataset-panel reveal" data-reveal>
+            <div class="panel-bar">
+              <span>Dataset access</span>
+              <span>M4-backed</span>
+            </div>
+            <div class="dataset-list">
+              <div class="dataset-row">
+                <div><strong>MIMIC-IV Demo</strong><span>Bundled local sample</span></div>
+                <span class="dataset-badge dataset-badge--ready">Bundled</span>
+              </div>
+              <div class="dataset-row">
+                <div><strong>MIMIC-IV</strong><span>Credentialed clinical database</span></div>
+                <span class="dataset-badge">PhysioNet</span>
+              </div>
+              <div class="dataset-row">
+                <div><strong>MIMIC-IV Note</strong><span>Credentialed clinical notes</span></div>
+                <span class="dataset-badge">PhysioNet</span>
+              </div>
+              <div class="dataset-row">
+                <div><strong>eICU</strong><span>Collaborative research database</span></div>
+                <span class="dataset-badge">PhysioNet</span>
+              </div>
+            </div>
+            <div class="backend-strip">
+              <div><span>Local</span><strong>DuckDB</strong></div>
+              <div><span>Remote</span><strong>BigQuery</strong></div>
+              <div><span>Access</span><strong>Credentialed</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section rigor" id="skills" aria-labelledby="rigor-title">
+        <div class="rigor-top">
+          <header class="section-intro reveal" data-reveal>
+            <p class="eyebrow">04 / Clinical-research rigor</p>
+            <h2 id="rigor-title">Skills that know where studies fail.</h2>
+            <p>
+              Clinician-reviewed, domain-specific checks help agents surface methodological risks early
+              and move consequential choices into explicit human review gates.
+            </p>
+          </header>
+          <p class="rigor-note reveal" data-reveal>
+            Built for research workflows—not clinical care, diagnosis, or automated clinical
+            decision-making. Outputs remain subject to expert review.
+          </p>
+        </div>
+
+        <div class="pitfall-index reveal" data-reveal>
+          <div class="pitfall-heading">
+            <span>Clinical research pitfalls</span>
+            <span>Checked before interpretation</span>
+          </div>
+          <ul>
+            <li><span>01</span>Cohort leakage</li>
+            <li><span>02</span>Immortal-time bias</li>
+            <li><span>03</span>Survivorship bias</li>
+            <li><span>04</span>Missingness</li>
+            <li><span>05</span>Coding drift</li>
+            <li><span>06</span>Denominator mismatch</li>
+            <li><span>07</span>Inappropriate adjustment</li>
+            <li><span>08</span>Multiple testing</li>
+            <li><span>09</span>Unsupported clinical claims</li>
+          </ul>
+        </div>
+
+        <div class="gate-flow reveal" data-reveal aria-label="Decision-gated study workflow">
+          <div><span>Define</span><p>Protocol, cohort, estimand</p></div>
+          <i aria-hidden="true"></i>
+          <div><span>Review</span><p>Assumptions and choices</p></div>
+          <i aria-hidden="true"></i>
+          <div><span>Capture</span><p>Scripts, runs, artifacts</p></div>
+          <i aria-hidden="true"></i>
+          <div><span>Interpret</span><p>Conservatively, with limits</p></div>
+        </div>
+      </section>
+
+      <section class="section open-stack" id="open-source" aria-labelledby="stack-title">
+        <div class="stack-heading reveal" data-reveal>
+          <div>
+            <p class="eyebrow">05 / Open source</p>
+            <h2 id="stack-title">One open stack.<br><em>Three clear layers.</em></h2>
+          </div>
+          <p>
+            Inspect the tools, follow the design decisions, and build on an open foundation
+            for more transparent clinical research.
+          </p>
+        </div>
+
+        <div class="stack-list reveal" data-reveal>
+          <article class="stack-row">
+            <span class="stack-number">01</span>
+            <div class="stack-name"><h3>Lincei</h3><span>Research environment</span></div>
+            <p>Direct agents, inspect research cards, and keep study decisions in view.</p>
+            <a href="https://github.com/hannesill/lincei" target="_blank" rel="noopener noreferrer">
+              Star on GitHub <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+          <article class="stack-row">
+            <span class="stack-number">02</span>
+            <div class="stack-name"><h3>M4</h3><span>EHR data access</span></div>
+            <p>Give agents structured access to clinical datasets and derived tables.</p>
+            <a href="https://github.com/hannesill/m4" target="_blank" rel="noopener noreferrer">
+              Star on GitHub <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+          <article class="stack-row">
+            <span class="stack-number">03</span>
+            <div class="stack-name"><h3>Vitrine</h3><span>Auditable surface</span></div>
+            <p>Keep research outputs, checkpoints, artifacts, and review decisions visible.</p>
+            <a href="https://github.com/hannesill/vitrine" target="_blank" rel="noopener noreferrer">
+              Star on GitHub <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+        </div>
+
+        <p class="early-note reveal" data-reveal>
+          <span>Project status</span>
+          Lincei is early. Expect rough edges; inspect the source and follow development on GitHub.
         </p>
       </section>
 
-      <!-- WORKS ────────────────────────────────────────────── -->
-      <section id="works" class="works" aria-label="Works">
-        <div class="works__grid">
-          <article class="work">
-            <h2 class="work__title">M4</h2>
-            <p class="work__kind">Foundation · Open source</p>
-            <p class="work__body">
-              Open-source infrastructure for controlled clinical data access,
-              versioned clinical definitions, provenance, and agent-accessible
-              workflows.
-            </p>
-            <a class="work__link" href="https://github.com/hannesill/m4">
-              View on GitHub <span aria-hidden="true">→</span>
-            </a>
-          </article>
+      <section class="section name-story" id="name" aria-labelledby="name-title">
+        <div class="name-visual reveal" data-reveal aria-hidden="true">
+          <div class="observation-eye">
+            <span></span>
+          </div>
+          <div class="orbit orbit--one"></div>
+          <div class="orbit orbit--two"></div>
+          <p>OCULUS LYNCIS<br>Observation plate VI</p>
+        </div>
 
-          <article class="work">
-            <h2 class="work__title">Vitrine</h2>
-            <p class="work__kind">Interface · In the workshop</p>
-            <p class="work__body">
-              The UI foundation for hosted study workspaces where teams use
-              agents, review cohort logic and checks, and export reproducible
-              study artifacts.
-            </p>
-            <a class="work__link" href="https://github.com/hannesill/vitrine">
-              View on GitHub <span aria-hidden="true">→</span>
+        <div class="name-copy reveal" data-reveal>
+          <p class="eyebrow">06 / Why “Lincei”</p>
+          <h2 id="name-title">The eye of the lynx.</h2>
+          <p class="name-lede">
+            Lincei takes its name from the <em>Accademia Nazionale dei Lincei</em>, founded
+            in Rome in 1603 by Federico Cesi and collaborators. Its lynx emblem stood for
+            sharp, penetrating observation: studying nature through evidence rather than
+            submission to inherited authority.
+          </p>
+          <div class="history-notes">
+            <div><span>1611</span><p>Galileo joined; the Academy later published work connected to his studies of sunspots.</p></div>
+            <div><span>Modern era</span><p>Revived under figures including Quintino Sella, it broadened across the sciences and humanities.</p></div>
+            <div><span>Rome</span><p>Today the Academy is based at Palazzo Corsini and associated with nearby Villa Farnesina.</p></div>
+          </div>
+          <p class="affiliation-note">Lincei Lab is not formally affiliated with the Academy.</p>
+        </div>
+      </section>
+
+      <section class="final-cta" aria-labelledby="cta-title">
+        <div class="cta-grid" aria-hidden="true"></div>
+        <div class="final-cta__inner reveal" data-reveal>
+          <p class="eyebrow">Open by design</p>
+          <h2 id="cta-title">Open clinical research<br>deserves open tools.</h2>
+          <p>
+            Build studies with agents while keeping the evidence, assumptions, and decisions
+            available for human review.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button button--primary"
+              href="https://github.com/hannesill/lincei/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Download Lincei</span><span class="button-arrow" aria-hidden="true">↓</span>
             </a>
-          </article>
+            <a
+              class="button button--secondary"
+              href="https://github.com/hannesill/lincei"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Star Lincei on GitHub</span><span class="button-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="foot">
-      <p>Lincei Labs</p>
-      <p>© 2026</p>
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a class="brand" href="#top" aria-label="Lincei Lab, back to top">
+            <span class="brand-mark" aria-hidden="true">
+              <img src="favicon.svg" width="22" height="22" alt="">
+            </span>
+            <span>Lincei Lab</span>
+          </a>
+          <p>Clinical research, with the work shown.</p>
+        </div>
+
+        <nav class="footer-links" aria-label="Projects">
+          <span>Projects</span>
+          <a href="https://github.com/hannesill/lincei" target="_blank" rel="noopener noreferrer">Lincei ↗</a>
+          <a href="https://github.com/hannesill/m4" target="_blank" rel="noopener noreferrer">M4 ↗</a>
+          <a href="https://github.com/hannesill/vitrine" target="_blank" rel="noopener noreferrer">Vitrine ↗</a>
+          <a href="https://github.com/hannesill/lincei/releases" target="_blank" rel="noopener noreferrer">Releases ↗</a>
+        </nav>
+
+        <nav class="footer-links" aria-label="Social links">
+          <span>Follow</span>
+          <a href="https://www.linkedin.com/in/hannesill/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://x.com/hannesill" target="_blank" rel="noopener noreferrer">X ↗</a>
+          <a href="https://github.com/hannesill" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </nav>
+
+        <nav class="footer-links" aria-label="Page links">
+          <span>Page</span>
+          <a href="#product">Product</a>
+          <a href="#workflow">How it works</a>
+          <a href="#open-source">Open source</a>
+          <a href="#top">Back to top ↑</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>Built by <a href="https://github.com/hannesill" target="_blank" rel="noopener noreferrer">Hannes Ill</a></p>
+        <p>Open-source research software · Not for clinical care</p>
+      </div>
     </footer>
   </body>
 </html>
