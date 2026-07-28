@@ -415,7 +415,7 @@ button {
   font-size: clamp(4rem, 7.4vw, 6.75rem);
   font-weight: 700;
   letter-spacing: -0.052em;
-  line-height: 0.94;
+  line-height: 0.98;
   text-wrap: balance;
 }
 
@@ -696,7 +696,7 @@ button {
   font-family: var(--serif);
   font-weight: 700;
   letter-spacing: -0.035em;
-  line-height: 1;
+  line-height: 1.04;
   text-wrap: balance;
 }
 
