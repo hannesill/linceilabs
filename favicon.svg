@@ -1,11 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path
-    d="M20 166C29 101 106 54 236 66C229 132 151 177 20 166Z"
-    fill="none"
-    stroke="#0f172a"
-    stroke-linejoin="round"
-    stroke-width="14"
+    fill="#0a0a0a"
+    fill-rule="evenodd"
+    d="M0 0h24v24H0Zm6.5 5.75v1.6h1.7v9.3H6.5v1.6h11V13.6h-1.3q-.3 2.7-1.6 3h-3.4V7.35h1.7v-1.6Z"
   />
-  <circle cx="128" cy="119" r="39" fill="none" stroke="#0f172a" stroke-width="11" />
-  <circle cx="128" cy="119" r="12" fill="#0f172a" />
 </svg>
