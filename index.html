@@ -6,7 +6,7 @@
     <title>Lincei: clinical research with AI agents</title>
     <meta
       name="description"
-      content="Lincei is an open-source desktop app that runs Claude Code, Codex and other agents on MIMIC-IV, eICU and chest X-rays. Every result lands on a research card with the code behind it, and decisions wait for your sign-off."
+      content="Lincei is an open-source desktop app that runs Claude Code, Codex and other agents on MIMIC-IV, eICU and other clinical data. Every result lands on a research card with the code behind it, and decisions wait for your sign-off."
     >
     <meta name="theme-color" content="#ffffff">
     <meta name="color-scheme" content="light">
@@ -21,7 +21,7 @@
       content="Run Claude Code, Codex and other agents on clinical data. Review every result as a research card and sign off on the decisions."
     >
     <meta property="og:image" content="https://www.linceilabs.com/og-lincei.png">
-    <meta property="og:image:alt" content="Lincei with a researcher's request on the left and a gallery of chest X-rays on the research board on the right.">
+    <meta property="og:image:alt" content="Lincei with a Sepsis-3 conversation beside its research cards.">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
@@ -106,9 +106,9 @@
           </h1>
 
           <p class="hero-sub" data-rise style="--d: 320ms">
-            Lincei runs Claude Code, Codex or another agent you already use on MIMIC-IV, eICU and
-            chest X-rays. Every cohort, table and image set lands on a research card with the code
-            behind it, and the agent stops for your sign-off where a choice changes the result.
+            Lincei runs Claude Code, Codex and other agents on MIMIC-IV, eICU and your own data.
+            Every result lands on a research card with the code behind it, and you sign off on the
+            decisions.
           </p>
 
           <div class="hero-actions" data-rise style="--d: 400ms">
@@ -156,22 +156,22 @@
           <figure class="shot shot--hero" data-tilt>
             <div class="shot-bar" aria-hidden="true">
               <span></span><span></span><span></span>
-              <b>Lincei — Chest X-ray labels</b>
+              <b>Lincei — Sepsis outcomes</b>
             </div>
             <picture>
               <source
                 media="(max-width: 720px)"
-                srcset="assets/shots/hero-m-866.webp"
-                width="866"
-                height="960"
+                srcset="assets/shots/hero-m-1224.webp"
+                width="1224"
+                height="1240"
               >
               <img
                 src="assets/shots/hero-1440.webp"
                 srcset="assets/shots/hero-1440.webp 1440w, assets/shots/hero-2880.webp 2880w"
                 sizes="(max-width: 1240px) calc(100vw - 32px), 1180px"
                 width="2880"
-                height="1792"
-                alt="Lincei with a researcher's request on the left: put the NIH ChestX-ray14 films labelled effusion, atelectasis or consolidation on the board and ask which labels look wrong. On the right, the research board shows them as a gallery of chest X-rays, each captioned with its label and tagged with age, sex and view."
+                height="1800"
+                alt="Lincei with a Sepsis-3 conversation on the left and the agent's research cards on the right: a Kaplan–Meier curve of 30-day survival by admission SOFA band, with confidence bands and the cohort described above it."
                 fetchpriority="high"
                 decoding="async"
               >
@@ -331,37 +331,38 @@
 
       <!-- Images -->
       <section class="section" id="images" aria-labelledby="images-title">
-        <div class="container split">
-          <div class="split-copy reveal" data-reveal>
-            <p class="eyebrow"><span>03</span> Images</p>
-            <h2 id="images-title">Chest X-rays go on the board, not into the model.</h2>
+        <div class="container">
+          <header class="section-head section-head--split reveal" data-reveal>
+            <div>
+              <p class="eyebrow"><span>03</span> Images</p>
+              <h2 id="images-title">Chest X-rays go on the board, not into the model.</h2>
+            </div>
             <p>
               Agents put a set of films on a card as a gallery, with captions and tags. Open a film
               to zoom and pan, switch overlays such as segmentation masks on and off, and answer the
               agent by clicking the pictures.
             </p>
-            <ul class="checklist">
-              <li>For MIMIC-CXR, Lincei asks for your PhysioNet login when an agent needs images, and downloads only that cohort's films.</li>
-              <li>Agents never open credentialed images, so no pixels reach the model provider.</li>
-              <li>Your picks come back to the agent as data it can tally on a new card.</li>
-            </ul>
-          </div>
+          </header>
 
-          <figure class="shot shot--crop reveal" data-reveal>
+          <figure class="shot reveal" data-reveal>
+            <div class="shot-bar" aria-hidden="true">
+              <span></span><span></span><span></span>
+              <b>Lincei — Chest X-ray labels</b>
+            </div>
             <picture>
               <source
                 media="(max-width: 720px)"
-                srcset="assets/shots/images-m-870.webp"
-                width="870"
-                height="1266"
+                srcset="assets/shots/xray-m-866.webp"
+                width="866"
+                height="960"
               >
               <img
-                src="assets/shots/images-650.webp"
-                srcset="assets/shots/images-650.webp 650w, assets/shots/images-1300.webp 1300w"
-                sizes="(max-width: 1000px) calc(100vw - 32px), 620px"
-                width="1300"
-                height="1266"
-                alt="The bottom of the gallery card: films 13 to 15 with their labels and age, sex and view tags, then the question Which labels look wrong? Click the films, with Confirm and Skip. The data file and script that made the card are listed under it."
+                src="assets/shots/xray-1440.webp"
+                srcset="assets/shots/xray-1440.webp 1440w, assets/shots/xray-2880.webp 2880w"
+                sizes="(max-width: 1240px) calc(100vw - 32px), 1180px"
+                width="2880"
+                height="1792"
+                alt="Lincei with a researcher's request on the left: put the NIH ChestX-ray14 films labelled effusion, atelectasis or consolidation on the board and ask which labels look wrong. On the right, the research board shows them as a gallery of chest X-rays, each captioned with its label and tagged with age, sex and view."
                 loading="lazy"
                 decoding="async"
               >
@@ -372,6 +373,24 @@
               courtesy of the NIH Clinical Center.
             </figcaption>
           </figure>
+
+          <ul class="feature-row reveal" data-reveal>
+            <li>
+              <span class="chip chip--image" aria-hidden="true">I</span>
+              <h3>Only the films a cohort needs</h3>
+              <p>For MIMIC-CXR, Lincei asks for your PhysioNet login when an agent needs images, then downloads that cohort's films.</p>
+            </li>
+            <li>
+              <span class="chip chip--table" aria-hidden="true">P</span>
+              <h3>Pixels stay off the model</h3>
+              <p>Agents never open credentialed images. You read the films on the board; the agent works with file names and labels.</p>
+            </li>
+            <li>
+              <span class="chip chip--decision" aria-hidden="true">!</span>
+              <h3>Answers on the pictures</h3>
+              <p>Click the films to answer a question. Your picks come back to the agent as data it can tally on a new card.</p>
+            </li>
+          </ul>
         </div>
       </section>
 
