@@ -96,17 +96,17 @@
         <div class="container hero-inner">
           <p class="tag" data-rise>
             <span class="tag-dot" aria-hidden="true"></span>
-            Open source · The AI workspace for clinical research
+            The AI workspace for clinical research
           </p>
 
           <h1 class="hero-title">
-            <span data-rise style="--d: 60ms">Clinical research,</span>
-            <span data-rise style="--d: 140ms">run by agents,</span>
-            <span data-rise style="--d: 220ms"><mark>checked by you.</mark></span>
+            <span data-rise style="--d: 60ms">Clinical research</span>
+            <span data-rise style="--d: 140ms">with AI</span>
+            <span data-rise style="--d: 220ms"><mark>you can check.</mark></span>
           </h1>
 
           <p class="hero-sub" data-rise style="--d: 320ms">
-            Lincei runs Claude Code, Codex and other agents on MIMIC-IV, eICU and your own data.
+            Lincei runs Claude Code, Codex and other agents on <span class="nowrap">MIMIC-IV</span>, eICU and your own data.
             Every result lands on a research card with the code behind it, and you sign off on the
             decisions.
           </p>
@@ -125,7 +125,13 @@
             </a>
           </div>
 
-          <p class="hero-platforms" data-rise style="--d: 430ms">
+          <ul class="hero-facts" data-rise style="--d: 420ms" aria-label="What you need">
+            <li>Free and open source</li>
+            <li>Uses your Claude or ChatGPT subscription</li>
+            <li>MIMIC-IV demo included</li>
+          </ul>
+
+          <p class="hero-platforms" data-rise style="--d: 440ms">
             <span data-for="any">For macOS, Windows and Linux</span>
             <span data-for="mac">
               For Apple Silicon · Also for
@@ -145,7 +151,7 @@
           </p>
 
           <p class="hero-meta" data-rise style="--d: 460ms">
-            Alpha · Free · MIT licensed · Built on
+            Alpha · MIT licensed · Built on
             <a href="https://github.com/pingdotgg/t3code" target="_blank" rel="noopener noreferrer">T3 Code</a>,
             <a href="https://github.com/hannesill/m4" target="_blank" rel="noopener noreferrer">M4</a> and
             <a href="https://github.com/hannesill/vitrine" target="_blank" rel="noopener noreferrer">Vitrine</a>
@@ -177,6 +183,50 @@
               >
             </picture>
           </figure>
+        </div>
+      </section>
+
+      <!-- Try asking -->
+      <section class="section section--examples" id="examples" aria-labelledby="examples-title">
+        <div class="container">
+          <header class="section-head section-head--split reveal" data-reveal>
+            <div>
+              <p class="eyebrow">Try asking</p>
+              <h2 id="examples-title">Ask in plain language. Get a card back.</h2>
+            </div>
+            <p>
+              Questions like these made the cards on this page. The first five work on the
+              MIMIC-IV demo that comes with Lincei; the last needs a folder of chest X-rays or
+              MIMIC-CXR access.
+            </p>
+          </header>
+
+          <ul class="examples reveal" data-reveal>
+            <li>
+              <q>How many adult ICU stays in the MIMIC-IV demo lasted longer than seven days?</q>
+              <span class="example-out">A count in the chat, with the query on request</span>
+            </li>
+            <li>
+              <q>Build a Sepsis-3 cohort of adult first ICU stays and show the exclusion flow.</q>
+              <span class="example-out">Exclusion flow card</span>
+            </li>
+            <li>
+              <q>Compare 30-day mortality across admission SOFA bands with a <span class="nowrap">Kaplan–Meier</span> curve.</q>
+              <span class="example-out">Kaplan–Meier card</span>
+            </li>
+            <li>
+              <q>Put Table 1 by 30-day survival on the board, then let me approve the cohort.</q>
+              <span class="example-out">Table 1 and an approval card</span>
+            </li>
+            <li>
+              <q>Chart 48-hour AKI rates by first care unit, using KDIGO staging.</q>
+              <span class="example-out">Chart card</span>
+            </li>
+            <li>
+              <q>Put the chest X-rays labelled effusion or atelectasis on the board and ask me which labels look wrong.</q>
+              <span class="example-out">Image gallery with a question</span>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -556,9 +606,22 @@
         <div class="container cta-inner reveal" data-reveal>
           <h2 id="cta-title">Start with the MIMIC-IV demo.</h2>
           <p>
-            Download Lincei, sign in to an agent and ask:
-            <q>Build a Sepsis-3 cohort and put Table 1 on the board.</q>
+            Lincei is free. The AI runs on the Claude or ChatGPT subscription you already have.
           </p>
+          <ol class="steps">
+            <li>
+              <h3>Download Lincei</h3>
+              <p>On first launch it sets up its own Python with M4 and Vitrine, and downloads the open MIMIC-IV demo.</p>
+            </li>
+            <li>
+              <h3>Sign in to an agent</h3>
+              <p>The setup installs Claude Code or Codex and signs you in with your Claude or ChatGPT account. Four other agents work too.</p>
+            </li>
+            <li>
+              <h3>Ask a question</h3>
+              <p>Try <q>Build a Sepsis-3 cohort and put Table 1 on the board.</q> Results land on cards; decisions wait for you.</p>
+            </li>
+          </ol>
           <div class="hero-actions">
             <a class="btn btn-invert btn-lg" href="https://github.com/hannesill/lincei/releases" target="_blank" rel="noopener noreferrer" data-download>
               <svg class="btn-icon btn-icon--download" data-for="any" aria-hidden="true"><use href="#icon-download"></use></svg>
