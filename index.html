@@ -61,14 +61,6 @@
           <span>Lincei</span>
         </a>
 
-        <nav class="nav-links" aria-label="Sections">
-          <a href="#why">Why Lincei</a>
-          <a href="#board">Research board</a>
-          <a href="#images">Images</a>
-          <a href="#data">Clinical data</a>
-          <a href="#agents">Agents</a>
-        </nav>
-
         <div class="nav-actions">
           <a class="nav-github" href="https://github.com/hannesill/lincei" target="_blank" rel="noopener noreferrer">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.93c.58.1.79-.25.79-.56v-2c-3.2.69-3.88-1.37-3.88-1.37-.52-1.33-1.27-1.69-1.27-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.68 1.25 3.33.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.27-5.24-5.67 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.18a10.96 10.96 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.57.23 2.73.11 3.02.74.8 1.18 1.83 1.18 3.08 0 4.41-2.7 5.38-5.27 5.66.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
@@ -81,85 +73,45 @@
 
     <main id="main">
       <!-- Hero -->
-      <section class="hero" data-hero>
-        <div class="hero-grid" aria-hidden="true"></div>
-
-        <div class="hero-float" aria-hidden="true" data-float>
-          <span class="float-mark fm-claude"><span class="float-card"><img src="assets/agents/claude.svg" alt=""></span></span>
-          <span class="float-mark fm-codex"><span class="float-card"><img src="assets/agents/codex.svg" alt=""></span></span>
-          <span class="float-mark fm-opencode"><span class="float-card"><img src="assets/agents/opencode.svg" alt=""></span></span>
-          <span class="float-mark fm-cursor"><span class="float-card"><img src="assets/agents/cursor.svg" alt=""></span></span>
-          <span class="float-mark fm-grok"><span class="float-card"><img src="assets/agents/grok.svg" alt=""></span></span>
-          <span class="float-mark fm-antigravity"><span class="float-card"><img src="assets/agents/antigravity.svg" alt=""></span></span>
-        </div>
-
-        <div class="container hero-inner">
-          <p class="tag" data-rise>
-            <span class="tag-dot" aria-hidden="true"></span>
-            The AI workspace for clinical research
-          </p>
-
-          <h1 class="hero-title">
-            <span data-rise style="--d: 60ms">Clinical research</span>
-            <span data-rise style="--d: 140ms">with AI</span>
-            <span data-rise style="--d: 220ms"><mark>you can check.</mark></span>
-          </h1>
-
-          <p class="hero-sub" data-rise style="--d: 320ms">
-            Lincei runs Claude Code, Codex and other agents on <span class="nowrap">MIMIC-IV</span>, eICU and your own data.
-            Every result lands on a research card with the code behind it, and you sign off on the
-            decisions.
-          </p>
-
-          <div class="hero-actions" data-rise style="--d: 400ms">
-            <a class="btn btn-primary btn-lg" href="https://github.com/hannesill/lincei/releases" target="_blank" rel="noopener noreferrer" data-download>
-              <svg class="btn-icon btn-icon--download" data-for="any" aria-hidden="true"><use href="#icon-download"></use></svg>
-              <svg class="btn-icon" data-for="mac" aria-hidden="true"><use href="#icon-apple"></use></svg>
-              <svg class="btn-icon btn-icon--linux" data-for="linux" aria-hidden="true"><use href="#icon-linux"></use></svg>
-              <svg class="btn-icon btn-icon--windows" data-for="windows" aria-hidden="true"><use href="#icon-windows"></use></svg>
-              <span data-download-label>Download Lincei</span>
-            </a>
-            <a class="btn btn-secondary btn-lg" href="https://github.com/hannesill/lincei" target="_blank" rel="noopener noreferrer">
-              <span>View source on GitHub</span>
-              <span class="btn-arrow" aria-hidden="true">↗</span>
-            </a>
+      <section class="hero">
+        <div class="container hero-top">
+          <div class="hero-copy">
+            <p class="hero-eyebrow" data-rise>The AI workspace for clinical research</p>
+            <h1 class="hero-title">
+              <span data-rise style="--d: 60ms">Clinical research with AI</span>
+              <span data-rise style="--d: 140ms"><mark>you can check.</mark></span>
+            </h1>
           </div>
 
-          <ul class="hero-facts" data-rise style="--d: 420ms" aria-label="What you need">
-            <li>Free and open source</li>
-            <li>Uses your Claude or ChatGPT subscription</li>
-            <li>MIMIC-IV demo included</li>
-          </ul>
+          <div class="hero-side" data-rise style="--d: 240ms">
+            <p class="hero-sub">
+              Lincei runs Claude Code, Codex and other agents on <span class="nowrap">MIMIC-IV</span>,
+              eICU and your own data. Every result lands on a card with the code behind it, and
+              decisions wait for your sign-off.
+            </p>
 
-          <p class="hero-platforms" data-rise style="--d: 440ms">
-            <span data-for="any">For macOS, Windows and Linux</span>
-            <span data-for="mac">
-              For Apple Silicon · Also for
-              <a href="https://github.com/hannesill/lincei/releases/latest/download/Lincei-mac-x64.dmg">Intel Macs</a>,
-              <a href="https://github.com/hannesill/lincei/releases" target="_blank" rel="noopener noreferrer">Windows and Linux</a>
-            </span>
-            <span data-for="linux">
-              For x64 · Also for
-              <a href="https://github.com/hannesill/lincei/releases/latest/download/Lincei-linux-arm64.AppImage">ARM64</a>,
-              <a href="https://github.com/hannesill/lincei/releases" target="_blank" rel="noopener noreferrer">macOS and Windows</a>
-            </span>
-            <span data-for="windows">
-              For x64 PCs · Also for
-              <a href="https://github.com/hannesill/lincei/releases/latest/download/Lincei-win-arm64.exe">ARM PCs</a>,
-              <a href="https://github.com/hannesill/lincei/releases" target="_blank" rel="noopener noreferrer">macOS and Linux</a>
-            </span>
-          </p>
+            <div class="hero-cta">
+              <a class="btn btn-primary btn-xl" href="https://github.com/hannesill/lincei/releases" target="_blank" rel="noopener noreferrer" data-download>
+                <svg class="btn-icon btn-icon--download" data-for="any" aria-hidden="true"><use href="#icon-download"></use></svg>
+                <svg class="btn-icon" data-for="mac" aria-hidden="true"><use href="#icon-apple"></use></svg>
+                <svg class="btn-icon btn-icon--linux" data-for="linux" aria-hidden="true"><use href="#icon-linux"></use></svg>
+                <svg class="btn-icon btn-icon--windows" data-for="windows" aria-hidden="true"><use href="#icon-windows"></use></svg>
+                <span data-download-label>Download Lincei</span>
+              </a>
+              <p class="hero-builds" data-for="mac linux windows">
+                <span data-for="mac">For Apple Silicon</span>
+                <span data-for="linux windows">For x64</span>
+                <br>
+                <a href="https://github.com/hannesill/lincei/releases" target="_blank" rel="noopener noreferrer">Other builds ↗</a>
+              </p>
+            </div>
 
-          <p class="hero-meta" data-rise style="--d: 460ms">
-            Alpha · MIT licensed · Built on
-            <a href="https://github.com/pingdotgg/t3code" target="_blank" rel="noopener noreferrer">T3 Code</a>,
-            <a href="https://github.com/hannesill/m4" target="_blank" rel="noopener noreferrer">M4</a> and
-            <a href="https://github.com/hannesill/vitrine" target="_blank" rel="noopener noreferrer">Vitrine</a>
-          </p>
+            <p class="hero-facts">Free · Open-source alpha · Works with your Claude or ChatGPT plan</p>
+          </div>
         </div>
 
-        <div class="container hero-shot" data-rise style="--d: 540ms">
-          <figure class="shot shot--hero" data-tilt>
+        <div class="container hero-shot" data-rise style="--d: 380ms">
+          <figure class="shot">
             <div class="shot-bar" aria-hidden="true">
               <span></span><span></span><span></span>
               <b>Lincei — Sepsis outcomes</b>

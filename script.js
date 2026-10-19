@@ -34,21 +34,13 @@
   }
 
   const header = document.querySelector("[data-header]");
-  const hero = document.querySelector("[data-hero]");
-  const field = document.querySelector("[data-float]");
-  const tilted = document.querySelector("[data-tilt]");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
 
-  // The header gets its rule once the page scrolls; the hero screenshot flattens over the first 420px.
+  // The header gets its rule once the page scrolls.
   let scrollFrame = 0;
   const onScroll = () => {
     scrollFrame = 0;
     header?.classList.toggle("is-scrolled", window.scrollY > 8);
-    if (tilted && !reducedMotion.matches) {
-      const progress = Math.min(window.scrollY / 420, 1);
-      tilted.style.setProperty("--tilt", `${(3 * (1 - progress)).toFixed(2)}deg`);
-    }
   };
   window.addEventListener(
     "scroll",
@@ -58,28 +50,6 @@
     { passive: true },
   );
   onScroll();
-
-  // Agent marks drift a little toward the pointer, only while it moves over the hero.
-  if (hero && field) {
-    let pointerFrame = 0;
-    let pointer = null;
-    hero.addEventListener("pointermove", (event) => {
-      if (!finePointer.matches || reducedMotion.matches) return;
-      pointer = { x: event.clientX, y: event.clientY };
-      pointerFrame ||= requestAnimationFrame(() => {
-        pointerFrame = 0;
-        if (!pointer) return;
-        const bounds = hero.getBoundingClientRect();
-        field.style.setProperty("--px", `${(((pointer.x - bounds.left) / bounds.width - 0.5) * 36).toFixed(1)}px`);
-        field.style.setProperty("--py", `${(((pointer.y - bounds.top) / bounds.height - 0.5) * 28).toFixed(1)}px`);
-      });
-    });
-    hero.addEventListener("pointerleave", () => {
-      pointer = null;
-      field.style.setProperty("--px", "0px");
-      field.style.setProperty("--py", "0px");
-    });
-  }
 
   const revealElements = document.querySelectorAll("[data-reveal]");
   if (reducedMotion.matches || !("IntersectionObserver" in window)) {
